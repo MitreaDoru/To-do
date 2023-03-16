@@ -1,0 +1,26 @@
+.task {
+  width: 100%;
+  height: auto;
+  background-color: rgb(126, 120, 112);
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border: 2px solid rgb(119, 113, 106);
+  border-radius: 10px;
+}
+
+.task h1 {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.task p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+@media screen and (min-width: 600px) {
+  .task {
+    width: 100%;
+    height: auto;
+  }
+}
