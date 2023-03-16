@@ -4,16 +4,20 @@ import { uiAction } from "./store/showAddForm-slice";
 import styled from './AddTaskForm.module.css'
 const AddTaskForm = () => {
   const dispatch = useDispatch();
+  let newTitle = '';
+  let newDescription = '';
 
   const changeTitleHandler = (e) => {
-    dispatch(tasksAction.newTitle(e.target.value));
+    newTitle = e.target.value
+
   };
   const changeDescriptionHandler = (e) => {
-    dispatch(tasksAction.newDescription(e.target.value));
+    newDescription = e.target.value
+
   };
   const submitNewTask = (e) => {
     e.preventDefault();
-    dispatch(tasksAction.addTask());
+    dispatch(tasksAction.addTask({ title: newTitle, description: newDescription }));
     dispatch(uiAction.toggleAddTask());
   };
   return (

@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 * {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
-body {
   margin: 0;
-  background-color: #3f3f3f;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
-.table {
-  border: 2px solid black;
+body {
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: radial-gradient(white, purple);
 }
-.table td {
-  border: 1px solid black;
+
+@media screen and (min-width: 800px) {
+  body {
+    width: 800px;
+    margin: auto;
+  }
 }

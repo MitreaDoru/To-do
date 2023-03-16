@@ -5,15 +5,19 @@ import styled from './EditForm.module.css'
 
 const EditForm = (props) => {
   const dispatch = useDispatch();
+  let editTitle = '';
+  let editDescription = '';
   const changeTitleHandler = (e) => {
+    editTitle = e.target.value
     dispatch(tasksAction.newTitle(e.target.value));
   };
   const changeDescriptionHandler = (e) => {
+    editDescription = e.target.value
     dispatch(tasksAction.newDescription(e.target.value));
   };
   const submitEditedTask = (e) => {
     e.preventDefault();
-    dispatch(tasksAction.editTask({ id: props.id, title: titleForEdit, description: descriptionForEdit }));
+    dispatch(tasksAction.editTask({ id: props.id, title: editTitle ? editTitle : titleForEdit, description: editDescription ? editDescription : descriptionForEdit }));
   };
 
   let defaultValues;

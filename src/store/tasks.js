@@ -13,16 +13,15 @@ const tasksSlice = createSlice({
   name: "tasksList",
   initialState: initialState,
   reducers: {
-    addTask(state) {
-      if (state.title.length > 0 && state.description.length > 3) {
+    addTask(state, action) {
+      const { title, description } = action.payload
+      if (title.length > 0 && description.length > 3) {
         state.tasks.unshift({
           id: v4(),
-          title: state.title,
-          description: state.description,
+          title: title,
+          description: description,
           showEdit: false,
         });
-        state.title = "";
-        state.description = "";
       }
     },
     newTitle(state, action) {
@@ -62,6 +61,8 @@ const tasksSlice = createSlice({
           state.description = task.description;
         }
       });
+      state.title = '';
+      state.description = '';
     },
   },
 });
